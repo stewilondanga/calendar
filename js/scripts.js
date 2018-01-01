@@ -67,4 +67,14 @@ _createDays: function () {
 	if (this.weekdays == null) return;
 	this.weekdays.innerHTML = null;
 	for (var e = 0; e < 7; e++) {
-	
+		this.weekdays.innerHTML += `<div style="width: ${this.hw}px; height: ${this.hw}px; line-height: ${this.hw}px;">${days[e].substring(0, 3)}</div>`;
+}
+},
+_createMonth: function () {
+this.currMonthDates = [];
+for (var r = 1; r < this._getDate(this.currYear, this.currMonth) + 1; r++) {
+		this.currMonthDates.push({ day: r, weekday: days[this._getDay(this.currYear, this.currMonth, r)] })
+}
+},
+_getDate: function (year, month) {
+return (new Date(year, month, 0)).getDate()
