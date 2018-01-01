@@ -8,3 +8,13 @@ function Calendar(elemId) {
     this.initCalendar();
     delete this.elmDomObj;
 }
+Calendar.prototype = {
+    constructor: Calendar,
+    drawCalendar: function () {
+        var content = `<div id="calendar_left">
+                            <div class="c_day"></div>
+                            <div class="c_date"></div>
+                            <div class="c_pages"></div>
+                        </div>
+                        <div id="calendar_right">
+                            <div id="calendar_header">
