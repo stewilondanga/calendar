@@ -38,3 +38,13 @@ this.today = new Date;
 this.currYear = this.today.getFullYear();
 this.currMonth = this.today.getMonth();
 this.currDay = this.today.getDay();
+this.currDate = this.today.getDate();
+		 this.currMonthDates = [];
+		 this.prevCellsCount = 0;
+		 //height width
+		 this.hw = 480 / 7;
+		 window.addEventListener("keydown", function (e) { return _that._navigateKeys(e); });
+		 let icons = document.querySelectorAll("div#calendar_header i[class^='icon-chevron'");
+		 icons.forEach(function (e) {
+				 e.addEventListener("click", function (e) { return _that._navigate(e); });
+		 
