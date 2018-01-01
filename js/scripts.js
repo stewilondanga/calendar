@@ -18,3 +18,13 @@ Calendar.prototype = {
                         </div>
                         <div id="calendar_right">
                             <div id="calendar_header">
+														<i class="icon-chevron-left"></i>
+	<h1></h1>
+	<i class="icon-chevron-right"></i>
+</div>
+<div id="calendar_weekdays"></div>
+<div id="calendar_content"></div>
+</div>`;
+this.elmDomObj.innerHTML = content;
+this.calLeft = document.getElementById("calendar_left");
+this.header = document.getElementById("calendar_header");
