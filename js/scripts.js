@@ -28,3 +28,13 @@ Calendar.prototype = {
 this.elmDomObj.innerHTML = content;
 this.calLeft = document.getElementById("calendar_left");
 this.header = document.getElementById("calendar_header");
+this.weekdays = document.getElementById("calendar_weekdays");
+this.content = document.getElementById("calendar_content");
+
+},
+initCalendar: function () {
+var _that = this;
+this.today = new Date;
+this.currYear = this.today.getFullYear();
+this.currMonth = this.today.getMonth();
+this.currDay = this.today.getDay();
