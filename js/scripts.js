@@ -6,3 +6,9 @@ var navigate = (function() {
 		$('.' + dataName).toggle();
 	});
 })();
+
+<script>
+	window.onload = function() {
+		new Calendar('calendar');
+	};
+</script>
