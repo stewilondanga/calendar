@@ -57,4 +57,14 @@ _generate: function () {
 	this._createMonth();
 	this._createPrevMonthCells();
 	this._createCurrMonthCells();
- 
+	this._highlightToday();
+	let lDates = document.querySelectorAll("div#calendar_content div:not(.blank)");
+	lDates.forEach(function (e) {
+			e.addEventListener("click", function (e) { return _that._selectDate(e); });
+	});
+},
+_createDays: function () {
+	if (this.weekdays == null) return;
+	this.weekdays.innerHTML = null;
+	for (var e = 0; e < 7; e++) {
+	
