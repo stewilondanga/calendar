@@ -47,4 +47,14 @@ this.currDate = this.today.getDate();
 		 let icons = document.querySelectorAll("div#calendar_header i[class^='icon-chevron'");
 		 icons.forEach(function (e) {
 				 e.addEventListener("click", function (e) { return _that._navigate(e); });
-		 
+
+	});
+	this._generate();
+
+},
+_generate: function () {
+	this._createDays();
+	this._createMonth();
+	this._createPrevMonthCells();
+	this._createCurrMonthCells();
+ 
