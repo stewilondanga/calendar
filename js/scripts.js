@@ -78,3 +78,13 @@ for (var r = 1; r < this._getDate(this.currYear, this.currMonth) + 1; r++) {
 },
 _getDate: function (year, month) {
 return (new Date(year, month, 0)).getDate()
+},
+ _getDay: function (year, month, n) {
+		 return (new Date(year, month, n)).getDay()
+ },
+ _createPrevMonthCells: function () {
+		 if (this.content == null) return;
+		 this.content.innerHTML = null;
+		 let u = false;
+		 this.prevCellsCount = 0;
+		 while (!u) {
