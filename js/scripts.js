@@ -98,3 +98,13 @@ return (new Date(year, month, 0)).getDate()
 	},
 	_createCurrMonthCells: function () {
 			if (this.content == null) return;
+			for (var c = 0; c < 42 - this.prevCellsCount; c++) {
+            if (c >= this.currMonthDates.length) {
+                this.content.innerHTML += `<div class="blank" style="width: ${this.hw}px; height: ${this.hw}px; line-height: ${this.hw}px;"></div>`;
+            } else {
+                var v = this.currMonthDates[c].day;
+                var m = this._verifyIfToday(new Date(this.currYear, this.currMonth, v)) ? `<div class="today" style="width: ${this.hw}px; height: ${this.hw}px; line-height: ${this.hw}px;">` : `<div style="width: ${this.hw}px; height: ${this.hw}px; line-height: ${this.hw}px;">`;
+                this.content.innerHTML +=` ${m}${v} </div>`;
+            }
+        }
+    },
