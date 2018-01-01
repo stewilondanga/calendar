@@ -88,3 +88,13 @@ return (new Date(year, month, 0)).getDate()
 		 let u = false;
 		 this.prevCellsCount = 0;
 		 while (!u) {
+			 if (days[this.prevCellsCount] == this.currMonthDates[0].weekday) {
+							u = true
+					} else {
+							this.content.innerHTML += `<div class="blank" style="width: ${this.hw}px; height: ${this.hw}px; line-height: ${this.hw}px;"></div>`;
+							this.prevCellsCount++
+					}
+			}
+	},
+	_createCurrMonthCells: function () {
+			if (this.content == null) return;
